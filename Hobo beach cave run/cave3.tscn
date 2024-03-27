@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://c6tyt5ad3c65f"]
+
+[ext_resource type="Texture2D" uid="uid://bq5ejpgktt5td" path="res://Screenshot 2024-03-26 14.03.10.png" id="1_8rtoy"]
+[ext_resource type="Script" path="res://Global.gd" id="1_t7rnf"]
+[ext_resource type="PackedScene" uid="uid://pwe6rp4acr0a" path="res://floor.tscn" id="2_j31o2"]
+[ext_resource type="PackedScene" uid="uid://cuq2cyoqonxlo" path="res://HOBO FRONT.tscn" id="3_6pyy4"]
+[ext_resource type="Texture2D" uid="uid://dvh4swll7pem2" path="res://New Piskel (4).png" id="6_a2oyq"]
+[ext_resource type="Texture2D" uid="uid://c1ebucp1qt4u2" path="res://New Piskel (5).png" id="6_wvdo1"]
+[ext_resource type="PackedScene" uid="uid://bfjjsa75oo4rm" path="res://enemy.tscn" id="7_04n2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2q34v"]
+radius = 11.5743
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ias3f"]
+size = Vector2(2092, 37)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t7rnf")
+
+[node name="Screenshot2024-03-2614_03_10" type="Sprite2D" parent="."]
+position = Vector2(579.5, 324.25)
+scale = Vector2(1.34696, 0.735429)
+texture = ExtResource("1_8rtoy")
+
+[node name="Node2D" parent="." instance=ExtResource("2_j31o2")]
+position = Vector2(-133, 395)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_6pyy4")]
+position = Vector2(30, 468)
+
+[node name="Node2D2" parent="." instance=ExtResource("2_j31o2")]
+position = Vector2(736, 389)
+
+[node name="Node2D3" parent="." instance=ExtResource("2_j31o2")]
+position = Vector2(370, 425)
+
+[node name="MONEY" type="Area2D" parent="."]
+position = Vector2(1065, 468)
+scale = Vector2(3.7, 3.35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MONEY"]
+position = Vector2(6.21618, 8.65672)
+shape = SubResource("CircleShape2D_2q34v")
+
+[node name="Area2D5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(521, 654.5)
+shape = SubResource("RectangleShape2D_ias3f")
+
+[node name="NewPiskel(4)" type="Sprite2D" parent="."]
+position = Vector2(627, 564)
+scale = Vector2(41.625, 7.96875)
+texture = ExtResource("6_a2oyq")
+
+[node name="NewPiskel(5)" type="Sprite2D" parent="."]
+position = Vector2(1079, 537)
+scale = Vector2(10.375, 7.25)
+texture = ExtResource("6_wvdo1")
+
+[node name="Area2D6" parent="." instance=ExtResource("7_04n2w")]
+position = Vector2(446, 486)
+
+[node name="Area2D7" parent="." instance=ExtResource("7_04n2w")]
+position = Vector2(650, 488)
+
+[connection signal="body_entered" from="MONEY" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="." method="_on_area_2d_5_body_entered"]

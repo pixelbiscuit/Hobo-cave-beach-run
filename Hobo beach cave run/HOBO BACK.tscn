@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqsxaxktkpqeh"]
+
+[ext_resource type="Texture2D" uid="uid://c4lwxoxvx5k73" path="res://All GODOT ASSETS FOR HOBO BEACH CAVE RUN/imagesBACK.png" id="1_coar7"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="ImagesBack" type="Sprite2D" parent="."]
+texture = ExtResource("1_coar7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, 64, 16, -64, -16, -64, -16, 64)

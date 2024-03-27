@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuq2cyoqonxlo"]
+
+[ext_resource type="Script" path="res://HOBO FRONT.gd" id="1_j7ap6"]
+[ext_resource type="Texture2D" uid="uid://cntyshe4q2d60" path="res://All GODOT ASSETS FOR HOBO BEACH CAVE RUN/imagesFront.png" id="1_ouf43"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-1, 1)
+script = ExtResource("1_j7ap6")
+
+[node name="ImagesFront" type="Sprite2D" parent="."]
+texture = ExtResource("1_ouf43")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, 64, 16, -64, -16, -64, -16, 64)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://yco78de3768q"]
+
+[ext_resource type="Texture2D" uid="uid://bomcca0pfqidi" path="res://All GODOT ASSETS FOR HOBO BEACH CAVE RUN/HOBO MOVING LEFT.png" id="1_6lgax"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="HoboMovingLeft" type="Sprite2D" parent="."]
+position = Vector2(-3, -3.75)
+scale = Vector2(0.179019, 0.177083)
+texture = ExtResource("1_6lgax")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -4)
+polygon = PackedVector2Array(16, -32, 8, -10, 8, 64, -8, 64, -8, -10, -16, -32, -16, -64, 16, -64)
